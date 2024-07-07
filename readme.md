@@ -32,3 +32,12 @@ Check your channel and see message appeared.
 5) Add pictures you want to upload into folder `content/`
 6) Run `php post.php`
 7) Check log file and your TG channel
+
+## Scheduler
+
+1) Figure where is your `php` is located: `which php` (eg. output: `/usr/bin/php`)
+2) Determine folder with cloned project: `pwd` (eg. output: `/root/projects/tg-picture-uploader`)
+3) Open crontab: `EDITOR=nano crontab -e`
+4) Add following line to post pictures every 10 minutes: 
+
+`*/10 * * * * /usr/bin/php /root/projects/tg-picture-uploader/post.php > /dev/null 2>&1`
