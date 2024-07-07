@@ -1,0 +1,15 @@
+{
+    "name": "coldrocksoftware/tg-picture-uploader",
+    "autoload": {
+        "psr-4": {
+            "ColdRockSoftware\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fred Orozco Diaz",
+            "email": "fred@coldrocksoftware.com"
+        }
+    ],
+    "require": {}
+}
