@@ -25,6 +25,10 @@ Check your channel and see message appeared.
 
 ## Usage
 
-1) Add pictures you want to upload into folder `content/`
-2) Run `php post.php`
-3) Check log file and your TG channel
+1) Clone the repo: `git clone git@github.com:orozcodiaz/tg-picture-uploader.git`
+2) `cd tg-picture-uploader/`
+3) `composer install`
+4) Create `.env` file: `cp .env.example .env` and add configuration from setup steps
+5) Add pictures you want to upload into folder `content/`
+6) Run `php post.php`
+7) Check log file and your TG channel
