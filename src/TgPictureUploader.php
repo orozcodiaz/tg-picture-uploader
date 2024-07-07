@@ -19,7 +19,15 @@ class TgPictureUploader
     {
         try {
             $this->parseEnv();
-            $pictures = glob('content' . DIRECTORY_SEPARATOR . '*');
+            $pictures = glob(
+                __DIR__ .
+                DIRECTORY_SEPARATOR .
+                '..' .
+                DIRECTORY_SEPARATOR .
+                'content' .
+                DIRECTORY_SEPARATOR .
+                '*'
+            );
 
             if (count($pictures) == 0) {
                 echo 'No pictures found' . PHP_EOL;
@@ -70,7 +78,14 @@ class TgPictureUploader
     protected function saveLogEntity(string $filePath, string $message): void
     {
         $logFileName = date('Y-m-d') . '.log';
-        $logFilePath = 'logs' . DIRECTORY_SEPARATOR . $logFileName;
+        $logFilePath = __DIR__ .
+            DIRECTORY_SEPARATOR .
+            '..' .
+            DIRECTORY_SEPARATOR .
+            'logs' .
+            DIRECTORY_SEPARATOR .
+            $logFileName;
+        
         $logItem = '[' . date('Y-m-d H:i:s') . ']: ' . $filePath . '; ' . $message;
         file_put_contents($logFilePath, $logItem . PHP_EOL, FILE_APPEND);
     }
