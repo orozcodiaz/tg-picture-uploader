@@ -87,9 +87,13 @@ class TgPictureUploader
         $envContent = explode(PHP_EOL, file_get_contents($envFile));
 
         foreach ($envContent as $config) {
-            list($key, $value) = explode('=', $config, 2);
-            $value = trim($value, '"');
-            $configNodes[$key] = $value;
+            $parts = explode('=', $config, 2);
+
+            if (count($parts) === 2) {
+                list($key, $value) = $parts;
+                $value = trim($value, '"');
+                $configNodes[$key] = $value;
+            }
         }
 
         $this->tgApiKey = $configNodes['TG_BOT_API_KEY'];
